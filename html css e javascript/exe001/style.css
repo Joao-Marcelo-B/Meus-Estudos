@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(159, 219, 233);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: rgb(2, 78, 95);
+}
+
+#principal {   
+    text-align: center;
+    background-color: rgb(41, 70, 236);
+    color: white;
+}
+
+h2 {
+    color: rgb(16, 151, 182);
+}
+/*Alterando o código para teste no git*/
+/*Exluir branch master*/
