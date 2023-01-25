@@ -22,6 +22,28 @@ public class ContaCorrente {
 		 }
 	}
 	
+	/*public void fecharConta() {
+		
+	}*/
+	
+	public void depositar(double valorDeDeposito) {
+		
+		if(this.status) {
+			this.saldo += valorDeDeposito;
+		} else {
+			System.out.println("Essa conta não existe ou está inátiva.");
+		}
+	}
+	
+	public void sacar(double valorDeSaque) {
+		
+		if(this.status && this.saldo > 0 && (this.saldo - valorDeSaque) >= 0) {
+			this.saldo -= valorDeSaque;
+		} else {
+			System.out.println("Nao foi possível fazer o saque.");
+		}
+	}
+	
 	public String getNumConta() {
 		return numConta;
 	}
