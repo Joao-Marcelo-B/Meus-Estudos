@@ -11,5 +11,16 @@ public class ByteBank {
 		ContaCorrente c2 = new ContaCorrente();
 		c2.abrirConta(1011, "CP", "Maria");
 		c2.estadoAtual();
+		
+		c1.depositar(100);
+		c2.depositar(500);
+		c2.sacar(100);
+		c1.sacar(150);
+		c1.fecharConta();
+		
+                System.out.println("Não");
+                
+		c1.estadoAtual();
+		c2.estadoAtual();
 	}
 }

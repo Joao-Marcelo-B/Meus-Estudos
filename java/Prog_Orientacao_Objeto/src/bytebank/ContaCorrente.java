@@ -1,7 +1,7 @@
 package bytebank;
 
-public class ContaCorrente {
-	public int numConta;
+public class ContaCorrente implements Funcionalidades{
+	private int numConta;
 	protected String tipo;   //CC - Conta Corrente //CP - Conta Poupança
 	private String titular;
 	private double saldo;
@@ -22,6 +22,7 @@ public class ContaCorrente {
 		this.setStatus(false);
 	}
 	
+	@Override
 	public void abrirConta(int numConta, String tipo, String titular) {
 		this.setNumConta(numConta);
 		this.setTipo(tipo);
@@ -36,6 +37,7 @@ public class ContaCorrente {
 		System.out.println("Conta aberta com sucesso.");
 	}
 	
+	@Override
 	public void fecharConta() {
 		if(this.saldo > 0) {
 			
@@ -48,6 +50,7 @@ public class ContaCorrente {
 			}
 	}
 	
+	@Override
 	public void depositar(double valorDeDeposito) {
 		
 		if(this.getStatus()) {
@@ -58,6 +61,7 @@ public class ContaCorrente {
 		}
 	}
 	
+	@Override
 	public void sacar(double valorDeSaque) {
 		
 		if(this.getStatus()) {
@@ -73,6 +77,7 @@ public class ContaCorrente {
 		}
 	}
 	
+	@Override
 	public void pagarMensal() {
 		float valor = 0;
 		if(this.tipo == "CC") {
@@ -128,12 +133,6 @@ public class ContaCorrente {
 		this.status = status;
 	}
 	
-	public void getInformacoes() {
-		System.out.println(this.numConta);
-		System.out.println(this.tipo);
-		System.out.println(this.titular);
-		System.out.println(this.saldo);
-	}
 }
 
 
