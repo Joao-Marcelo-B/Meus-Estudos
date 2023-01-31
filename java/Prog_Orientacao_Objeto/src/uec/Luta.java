@@ -7,23 +7,35 @@ public class Luta {
 	private int rounds;
 	private boolean aprovada;
 	
-	public void marcarLuta() {
-		
+	public void marcarLuta(Lutadores lutador1, Lutadores lutador2) {
+		if(lutador1.getCategoria() == lutador2.getCategoria() && lutador1.getNome() != lutador2.getNome()) {
+				this.aprovada = true;
+		} else {
+			this.aprovada = false;
+			this.desafiado = null;
+			this.desafiante = null;
+			
+		}
 	}
 	public void lutar() {
-		
+		if(this.aprovada) {
+			this.desafiado.apresentar();
+			this.desafiante.apresentar();
+		} else {
+			System.out.println("Luta nao pode acontecer.");
+		}
 	}
 	
-	public String getDesafiado() {
-		return desafiado.getNome();
+	public Lutadores getDesafiado() {
+		return desafiado;
 	}
-	public void setDesafiado(String desafiado) {
+	public void setDesafiado(Lutadores desafiado) {
 		this.desafiado = desafiado;
 	}
-	public String getDesafiante() {
+	public Lutadores getDesafiante() {
 		return desafiante;
 	}
-	public void setDesafiante(String desafiante) {
+	public void setDesafiante(Lutadores desafiante) {
 		this.desafiante = desafiante;
 	}
 	public int getRounds() {
