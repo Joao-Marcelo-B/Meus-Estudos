@@ -2,28 +2,41 @@ package uec;
 
 public class Luta {
 
-	private String desafiado;
-	private String desafiante;
+	private Lutadores desafiado;
+	private Lutadores desafiante;
 	private int rounds;
-	private int aprovada;
+	private boolean aprovada;
 	
-	public void marcarLuta() {
-		
+	public void marcarLuta(Lutadores lutador1, Lutadores lutador2) {
+		if(lutador1.getCategoria() == lutador2.getCategoria() && lutador1.getNome() != lutador2.getNome()) {
+				this.aprovada = true;
+		} else {
+			this.aprovada = false;
+			this.desafiado = null;
+			this.desafiante = null;
+			
+		}
 	}
 	public void lutar() {
-		
+		if(this.aprovada) {
+			this.desafiado.apresentar();
+			this.desafiante.apresentar();
+			
+		} else {
+			System.out.println("Luta nao pode acontecer.");
+		}
 	}
 	
-	public String getDesafiado() {
+	public Lutadores getDesafiado() {
 		return desafiado;
 	}
-	public void setDesafiado(String desafiado) {
+	public void setDesafiado(Lutadores desafiado) {
 		this.desafiado = desafiado;
 	}
-	public String getDesafiante() {
+	public Lutadores getDesafiante() {
 		return desafiante;
 	}
-	public void setDesafiante(String desafiante) {
+	public void setDesafiante(Lutadores desafiante) {
 		this.desafiante = desafiante;
 	}
 	public int getRounds() {
@@ -32,10 +45,10 @@ public class Luta {
 	public void setRounds(int rounds) {
 		this.rounds = rounds;
 	}
-	public int getAprovada() {
+	public boolena getAprovada() {
 		return aprovada;
 	}
-	public void setAprovada(int aprovada) {
+	public void setAprovada(boolean aprovada) {
 		this.aprovada = aprovada;
 	}
 	
