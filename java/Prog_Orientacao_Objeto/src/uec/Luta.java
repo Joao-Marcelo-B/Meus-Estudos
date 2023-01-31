@@ -2,10 +2,10 @@ package uec;
 
 public class Luta {
 
-	private String desafiado;
-	private String desafiante;
+	private Lutadores desafiado;
+	private Lutadores desafiante;
 	private int rounds;
-	private int aprovada;
+	private boolean aprovada;
 	
 	public void marcarLuta() {
 		
@@ -15,7 +15,7 @@ public class Luta {
 	}
 	
 	public String getDesafiado() {
-		return desafiado;
+		return desafiado.getNome();
 	}
 	public void setDesafiado(String desafiado) {
 		this.desafiado = desafiado;
@@ -32,10 +32,10 @@ public class Luta {
 	public void setRounds(int rounds) {
 		this.rounds = rounds;
 	}
-	public int getAprovada() {
+	public boolean getAprovada() {
 		return aprovada;
 	}
-	public void setAprovada(int aprovada) {
+	public void setAprovada(boolean aprovada) {
 		this.aprovada = aprovada;
 	}
 	
